@@ -1,41 +1,13 @@
-# Website
+# Bot Noname static site
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This repository now ships a plain static site for GitHub Pages.
 
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
+The deployed output is generated into `build/` with:
 
 ```
-$ yarn start
+npm run build
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+The page is designed as a migration shell. It keeps old paths intact, then redirects them to `https://nnsvn.me/botnoname` on the client side.
 
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Important: GitHub Pages cannot emit true server-side 301 or 308 redirects for arbitrary slugs. If you need search-engine-grade migration behavior, the industry-correct option is to host the old domain behind a redirect-capable edge such as Cloudflare, Netlify, or a server you control.

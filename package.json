@@ -2,50 +2,11 @@
   "name": "bot-docs-website",
   "version": "4.0.0",
   "license": "MIT",
-  "private": false,
-  "homepage": "/New-Website",
+  "private": true,
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
-  },
-  "dependencies": {
-    "@docusaurus/core": "3.0.1",
-    "@docusaurus/plugin-client-redirects": "3.0.1",
-    "@docusaurus/plugin-google-gtag": "3.0.1",
-    "@docusaurus/preset-classic": "3.0.1",
-    "@giscus/react": "^2.2.8",
-    "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
-    "docusaurus-gtm-plugin": "^0.0.2",
-    "docusaurus-plugin-typedoc-api": "^3.0.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-lite-youtube-embed": "^2.3.52",
-    "unist-util-visit": "^4.1.2"
-  },
-  "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.0.1",
-    "@docusaurus/types": "^3.0.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
-    ]
+    "build": "node scripts/build.mjs",
+    "clean": "node scripts/build.mjs --clean",
+    "preview": "npx serve build"
   },
   "engines": {
     "node": ">=18.0"
